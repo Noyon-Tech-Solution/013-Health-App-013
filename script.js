@@ -1,25 +1,25 @@
 let counters = document.querySelectorAll(".last_child");
-let time     = 300;
+let time = 300;
 
-counters.forEach(counter => {
+counters.forEach((counter) => {
     let updateCount = () => {
         let target = +counter.getAttribute("data_target");
-        let count  = counter.innerText;
+        let count = counter.innerText;
 
         let increment = target / time;
 
-        if(count < target){
+        if (count < target) {
             counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 1000)
-        }else{
+            setTimeout(updateCount, 1000);
+        } else {
             counter.innerText = target;
         }
-    }
+    };
     updateCount();
 });
 
 let health = document.querySelector(".head");
 
 setTimeout(() => {
-    health.innerText = "You are feet!"
+    health.innerText = "You are feet!";
 }, 4000);
